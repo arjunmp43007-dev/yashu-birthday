@@ -188,17 +188,19 @@
   .polaroid:nth-child(9){ --tilt: 2deg; }
 
   .polaroid .frame{
+    position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
     height: 192px; /* Fallback for older mobile browsers */
     background: #E4DACB;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     overflow: hidden;
   }
 
   .polaroid img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
