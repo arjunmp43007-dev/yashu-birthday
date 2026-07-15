@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>for Yashu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --bg: #191B33;
+    --text: #F4EFE6;
+    --muted: #9AA0C4;
+    --gold: #C9A15F;
+    --rose: #C79689;
+    --transition-speed: 1.4s;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Karla', sans-serif;
+    font-weight: 300;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation: none !important; transition: background-color 0.4s ease !important; }
+  }
+
+  section{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8vh 8vw;
+    position: relative;
+  }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    transition: color var(--transition-speed) ease;
+    text-align: center;
+  }
+
+  h1, h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  h1{ font-size: clamp(2.8rem, 8vw, 5.5rem); }
+  h2{ font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1.5rem; }
+
+  p{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.9;
+    max-width: 640px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .lede{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    color: var(--muted);
+    max-width: 560px;
+    text-align: center;
+    margin-top: 1rem;
+    transition: color var(--transition-speed) ease;
+  }
+
+  /* ---------- HERO ---------- */
+
+  #hero{
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stars{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .star{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
+  @keyframes twinkle{
+    0%, 100%{ opacity: 0.15; }
+    50%{ opacity: 0.85; }
+  }
+
+  .hero-content{ position: relative; z-index: 2; }
+
+  .scroll-cue{
+    position: absolute;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+    animation: bob 2.4s ease-in-out infinite;
+    transition: color var(--transition-speed) ease;
+  }
+
+  @keyframes bob{
+    0%, 100%{ transform: translateX(-50%) translateY(0); }
+    50%{ transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ---------- DIVIDER ---------- */
+
+  .divider{
+    width: 1px;
+    height: 60px;
+    background: currentColor;
+    opacity: 0.25;
+    margin: 0 auto 2rem;
+  }
+
+  /* ---------- YEAR MARK ---------- */
+
+  .year-mark{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .polaroid{
+    background: #FBF7EF;
+    padding: 14px 14px 40px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transform: rotate(var(--tilt, -2deg));
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+
+  .polaroid:hover{ transform: rotate(0deg) scale(1.03); }
+  .polaroid:nth-child(2){ --tilt: 2deg; }
+  .polaroid:nth-child(3){ --tilt: -1deg; }
+  .polaroid:nth-child(4){ --tilt: 1.5deg; }
+  .polaroid:nth-child(5){ --tilt: -2.5deg; }
+  .polaroid:nth-child(6){ --tilt: 1deg; }
+  .polaroid:nth-child(7){ --tilt: 2.5deg; }
+  .polaroid:nth-child(8){ --tilt: -1.5deg; }
+  .polaroid:nth-child(9){ --tilt: 2deg; }
+
+  .polaroid .frame{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #E4DACB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .polaroid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .polaroid .placeholder-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: #A99C86;
+    text-align: center;
+    padding: 0 8px;
+  }
+
+  .polaroid figcaption{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #4A4030;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 0.95rem;
+  }
+
+  /* ---------- LETTER ---------- */
+
+  #letter{
+    align-items: center;
+  }
+
+  .letter-paper{
+    max-width: 620px;
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+    padding: clamp(2rem, 5vw, 4rem);
+  }
+
+  .letter-body{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 2;
+    white-space: pre-wrap;
+    min-height: 200px;
+  }
+
+  .cursor{
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--gold);
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blink 0.9s step-start infinite;
+  }
+
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  .letter-skip{
+    margin-top: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--muted);
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  .letter-skip:hover{ opacity: 1; }
+  .letter-skip.hidden{ display: none; }
+
+  /* ---------- POEM ---------- */
+
+  .poem{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+    line-height: 2.1;
+    text-align: center;
+    max-width: 520px;
+  }
+
+  .poem .stanza{ margin-bottom: 2.2rem; }
+  .poem .stanza:last-child{ margin-bottom: 0; }
+
+  /* ---------- CLOSING ---------- */
+
+  #closing .signature{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-top: 2.5rem;
+    transition: color var(--transition-speed) ease;
+  }
+
+  .firefly{
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px 2px var(--gold);
+    opacity: 0;
+    animation: drift 8s ease-in-out infinite;
+  }
+
+  @keyframes drift{
+    0%{ opacity: 0; transform: translateY(0) translateX(0); }
+    20%{ opacity: 0.8; }
+    80%{ opacity: 0.6; }
+    100%{ opacity: 0; transform: translateY(-80px) translateX(20px); }
+  }
+
+  .fade-in{
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 1s ease, transform 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .fade-in.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  footer{
+    text-align: center;
+    padding: 3rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    opacity: 0.4;
+  }
+
+  /* ---------- MENDING THREAD ---------- */
+  .mending-thread-track{
+    position: fixed;
+    top: 0;
+    right: 16px;
+    bottom: 0;
+    width: 2px;
+    z-index: 100;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, var(--text) 0, var(--text) 4px, transparent 4px, transparent 8px);
+    opacity: 0.15;
+    transition: background-color var(--transition-speed) ease;
+  }
+  .mending-thread-fill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--gold);
+    height: var(--scroll-progress, 0%);
+    transition: height 0.1s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mending-thread-fill{ transition: none; }
+  }
+  @media (max-width: 600px){
+    .mending-thread-track{ width: 1px; right: 8px; }
+  }
+
+  /* ---------- AMBIENT CHIME ---------- */
+  .ambient-toggle{
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  .ambient-toggle:hover{ opacity: 1; }
+  .ambient-toggle.active{
+    background: var(--gold);
+    color: var(--bg);
+  }
+
+  /* ---------- PS MODAL ---------- */
+  .ps-star{
+    color: var(--gold);
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 8px;
+    animation: psPulse 3s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .ps-star:hover{
+    transform: scale(1.3);
+    filter: brightness(1.2);
+  }
+  @keyframes psPulse{
+    0%, 100%{ opacity: 0.35; transform: scale(1); }
+    50%{ opacity: 1; transform: scale(1.2); }
+  }
+
+  .ps-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+  }
+  .ps-modal.visible{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .ps-card{
+    background: #FBF7EF;
+    color: #2B2620;
+    max-width: 480px;
+    width: 90%;
+    padding: 2.5rem;
+    border-radius: 3px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+  .ps-close{
+    margin-top: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8C8270;
+    background: none;
+    border: 1px solid #8C8270;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    font-style: normal;
+  }
+  .ps-close:hover{ opacity: 1; }
+
+  /* ---------- PATHS SVG ---------- */
+  .paths-svg-container{
+    width: 60px;
+    height: 120px;
+    margin: 2.5rem auto 0;
+  }
+  .paths-svg{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .path-line{
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+    transition: stroke-dashoffset 3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fade-in.visible .path-line{
+    stroke-dashoffset: 0;
+  }
+
+  /* ---------- FULL CIRCLE WHISPER ---------- */
+  .full-circle-whisper{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 2.5s ease;
+    text-align: center;
+  }
+  .full-circle-whisper.visible{
+    opacity: 0.8;
+  }
+  /* ---------- CANDLE ---------- */
+  .candle-container {
+    margin-top: 3rem;
+    cursor: pointer;
+    width: 24px;
+    height: 32px;
+    position: relative;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  .candle-container:hover { opacity: 0.8; }
+  .candle-svg { width: 100%; height: 100%; overflow: visible; }
+  .candle-body { fill: var(--gold); }
+  .candle-wick { stroke: #888; stroke-width: 1.5; }
+  .candle-flame { 
+    fill: #FFAA00; 
+    opacity: 0;
+    transition: opacity 1s ease;
+    transform-origin: 12px 10px;
+  }
+  .candle-container.lit { opacity: 1; }
+  .candle-container.lit .candle-flame {
+    opacity: 1;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.8));
+  }
+  @keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+    50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+    100% { transform: scale(0.95) rotate(-1deg); opacity: 0.95; }
+  }
+
+  /* ---------- TIME CAPSULE ---------- */
+  .time-capsule {
+    margin-top: 4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  .time-capsule span { transition: color 0.3s ease; }
+  .time-capsule:hover span { color: var(--gold); }
+  .capsule-message {
+    display: none;
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .time-capsule.shaking span {
+    display: inline-block;
+    animation: capsuleShake 0.4s ease-in-out;
+  }
+  @keyframes capsuleShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  /* ---------- PRINT KEEPSAKE ---------- */
+  .letter-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .letter-print {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  .letter-print:hover { color: var(--gold); }
+
+  .birthday-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    display: none;
+  }
+  .birthday-line.active { display: block; }
+  
+  @media print {
+    body, html { background: #F3ECE0 !important; color: #2B2620 !important; height: auto !important; overflow: visible !important; }
+    #hero, #mem-2021, #mistake, #reconnect, #today, #closing, footer { display: none !important; }
+    .letter-actions, .ambient-toggle, .mending-thread-track, .scroll-cue { display: none !important; }
+    section { padding: 0 !important; min-height: auto !important; }
+    #letter, #poem { display: block !important; padding: 2cm !important; margin: 0 !important; }
+    .fade-in { opacity: 1 !important; transform: none !important; }
+    .letter-paper { max-height: none !important; overflow: visible !important; -webkit-mask-image: none !important; mask-image: none !important; border: none !important; padding: 0 !important; margin: 0 !important;}
+    .stanza { margin-bottom: 2rem !important; }
+    .cursor { display: none !important; }
+    @page { margin: 1cm; }
+  }
+
+  /* ---------- PREMIUM ENTRANCE ENVELOPE ---------- */
+  body.locked {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .entrance-overlay {
+    position: fixed;
+    inset: 0;
+    background: #14152A;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.5s ease 0.8s, visibility 1.5s ease 0.8s;
+  }
+  .entrance-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .entrance-envelope-wrapper {
+    position: relative;
+    width: 340px;
+    height: 220px;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .entrance-envelope-wrapper:hover {
+    transform: scale(1.03);
+  }
+  .env-svg-container {
+    position: absolute;
+    inset: 0;
+    perspective: 1200px;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  }
+  .env-back, .env-front, .env-letter, .env-top-flap, .env-wax-seal {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+  }
+  
+  .env-back { z-index: 1; }
+  .env-letter { 
+    z-index: 2; 
+    top: 15px; left: 15px; 
+    width: 310px; height: 190px; 
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s; 
+  }
+  .env-front { z-index: 3; filter: drop-shadow(0 -4px 10px rgba(0,0,0,0.3)); }
+  .env-top-flap {
+    z-index: 4;
+    transform-origin: top center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+  }
+  
+  /* Wax Seal */
+  .env-wax-seal {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  .seal-circle {
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #B8860B, #8B6508);
+    border-radius: 50%;
+    box-shadow: 
+      inset 0 0 4px rgba(255,255,255,0.6),
+      inset 0 0 10px rgba(0,0,0,0.4),
+      0 4px 8px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 105px; /* Aligned with the flap point */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .seal-circle::after {
+    content: 'Y';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: rgba(255,255,255,0.7);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5), -1px -1px 1px rgba(255,255,255,0.3);
+    font-style: italic;
+  }
+
+  .env-pulse {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; height: 260px;
+    border-radius: 8px;
+    border: 1px solid rgba(185, 150, 89, 0.5);
+    animation: envPulseAnim 3s infinite ease-out;
+  }
+  @keyframes envPulseAnim {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0; }
+  }
+
+  /* OPEN ANIMATION SEQUENCE */
+  .entrance-envelope-wrapper.open { pointer-events: none; }
+  .entrance-envelope-wrapper.open .env-pulse { display: none; }
+  
+  /* 1. Seal dissolves */
+  .entrance-envelope-wrapper.open .env-wax-seal {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  /* 2. Flap opens */
+  .entrance-envelope-wrapper.open .env-top-flap {
+    transform: rotateX(180deg);
+    z-index: 1; /* drops behind letter */
+  }
+  /* 3. Letter slides up */
+  .entrance-envelope-wrapper.open .env-letter {
+    transform: translateY(-80px);
+  }
+
+  /* --- MOBILE OPTIMIZATION --- */
+  @media (max-width: 768px) {
+    .env-svg-container { filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4)); }
+    .env-front, .env-top-flap { filter: none !important; }
+    .env-pulse { display: none !important; }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ENTRANCE ENVELOPE -->
+  <div id="entranceOverlay" class="entrance-overlay">
+    <div class="entrance-envelope-wrapper" id="entranceEnvelope">
+      <div class="env-pulse"></div>
+      <div class="env-svg-container">
+        <!-- Back of envelope -->
+        <svg viewBox="0 0 340 220" class="env-back" preserveAspectRatio="none">
+          <rect x="0" y="0" width="340" height="220" fill="#1A1C33" rx="4"/>
+          <!-- Inner shadow simulation -->
+          <rect x="0" y="0" width="340" height="220" fill="none" stroke="#0C0D1A" stroke-width="6" rx="4"/>
+        </svg>
+        
+        <!-- Letter sticking out -->
+        <div class="env-letter">
+           <svg viewBox="0 0 310 190" preserveAspectRatio="none">
+             <rect x="0" y="0" width="310" height="190" fill="#F4EFE6" rx="2"/>
+             <!-- Faint lines on letter to look real -->
+             <line x1="30" y1="40" x2="150" y2="40" stroke="#E0D6C8" stroke-width="2"/>
+             <line x1="30" y1="60" x2="280" y2="60" stroke="#E0D6C8" stroke-width="2"/>
+             <line x1="30" y1="80" x2="250" y2="80" stroke="#E0D6C8" stroke-width="2"/>
+           </svg>
+        </div>
+
+        <!-- Front of envelope -->
+        <svg viewBox="0 0 340 220" class="env-front" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="frontGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#242746"/>
+              <stop offset="100%" stop-color="#1A1C33"/>
+            </linearGradient>
+          </defs>
+          <!-- Left, Right, Bottom flaps as one shape. Note the V shape is 170, 130 -->
+          <path d="M0,0 L170,130 L340,0 L340,220 L0,220 Z" fill="url(#frontGrad)" stroke="#333757" stroke-width="1.5" stroke-linejoin="round"/>
+          <!-- Text shifted lower so it is NOT covered by the flap (flap point is at Y=130) -->
+          <text x="170" y="180" fill="#C5A467" font-family="'Cormorant Garamond', serif" font-size="26" font-style="italic" text-anchor="middle" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">for Yashu.</text>
+        </svg>
+
+        <!-- Top Flap -->
+        <svg viewBox="0 0 340 220" class="env-top-flap" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="flapGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#2B2E53"/>
+              <stop offset="100%" stop-color="#1D2038"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,0 L170,130 L340,0 Z" fill="url(#flapGrad)" stroke="#3D426B" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- The Wax Seal -->
+        <div class="env-wax-seal">
+          <div class="seal-circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" data-bg="#191B33" data-text="#F4EFE6" data-title="for Yashu">
+    <div class="stars" id="starField">
+    </div>
+    <div class="hero-content fade-in">
+      <div class="eyebrow">a small site, just for you</div>
+      <h1 id="heroName">Yashaswini</h1>
+      <div id="birthdayLine" class="birthday-line">happiest of birthdays to you, today.</div>
+      <p class="lede">a few things I wanted you to know before you read the rest</p>
+      <div id="fullCircleWhisper" class="full-circle-whisper">you came back to the beginning too</div>
+    </div>
+    <div class="scroll-cue">scroll ↓</div>
+  </section>
+
+  <!-- 2021 -->
+  <section id="mem-2021" data-bg="#1D2038" data-text="#F4EFE6" data-title="2021 —">
+    <div class="fade-in">
+      <div class="year-mark">2021</div>
+      <div class="divider"></div>
+      <h2>You were surprised I remembered your name.</h2>
+      <p>Online classes, another section, a year that felt like it belonged to no one. I don't fully know why I remembered — I just did. And somehow, that was enough to begin something.</p>
+    </div>
+  </section>
+
+  <!-- THE MISTAKE -->
+  <section id="mistake" data-bg="#14152A" data-text="#DCDDF0" data-title="i'm sorry">
+    <div class="fade-in">
+      <div class="year-mark">later</div>
+      <div class="divider"></div>
+      <h2>I made a mistake.</h2>
+      <p>You asked me not to post one photo. I didn't listen. It cost us almost a year. You stepped back, and I let you have that space — because it was the least I owed you.</p>
+    </div>
+  </section>
+
+  <!-- RECONNECT -->
+  <section id="reconnect" data-bg="#2A2A3D" data-text="#F1EDE5" data-title="you came back">
+    <div class="fade-in">
+      <div class="year-mark">almost a year later</div>
+      <div class="divider"></div>
+      <h2>Then, you texted first.</h2>
+      <p>I never expected that. I still don't take it lightly. Slowly, carefully, we found our way back to something that felt like us again.</p>
+      <!-- TWO PATHS BECOMING ONE SVG -->
+      <div class="paths-svg-container">
+        <svg class="paths-svg" viewBox="0 0 100 200" preserveAspectRatio="xMidYMid meet">
+          <path class="path-line" d="M 20,0 C 20,100 50,150 50,200" />
+          <path class="path-line" d="M 80,0 C 80,100 50,150 50,200" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY / GALLERY -->
+  <section id="today" data-bg="#4A4436" data-text="#FBF7EF" data-title="us, lately">
+    <div class="fade-in">
+      <div class="year-mark">today</div>
+      <div class="divider"></div>
+      <h2>A few moments, out of many more I'm glad we have.</h2>
+      <div class="gallery">
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-1.jpg" alt="a quiet moment" loading="lazy"></div>
+          <figcaption>somewhere in between conversations</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-2.jpg" alt="a moment" loading="lazy"></div>
+          <figcaption>the colours suit you</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-3.jpg" alt="the two of us" loading="lazy"></div>
+          <figcaption>still my favorite kind of afternoon</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-4.jpg" alt="a moment" loading="lazy"></div>
+          <figcaption>quiet mornings look good on you</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-5.jpg" alt="a moment" loading="lazy"></div>
+          <figcaption>always mid-scroll, mid-thought</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/photo-6.jpg" alt="a moment" loading="lazy"></div>
+          <figcaption>dressed up, same girl underneath</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/preview.webp" alt="both of us together outdoors" loading="lazy"></div>
+          <figcaption>here's to more of these</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/preview%20(1).webp" alt="looking up, colorful sky" loading="lazy"></div>
+          <figcaption>always looking somewhere hopeful</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <div class="frame"><img src="images/preview%20(2).webp" alt="mirror selfie, pink dress" loading="lazy"></div>
+          <figcaption>just being you, unbothered</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section id="letter" data-bg="#F3ECE0" data-text="#2B2620" data-title="read slowly">
+    <div class="fade-in" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+      <div class="eyebrow" style="color:#A99C86;">happy birthday, yashu</div>
+      <div class="letter-paper">
+        <div class="letter-body" id="letterText"></div>
+        <span class="cursor" id="letterCursor"></span>
+      </div>
+      <div class="letter-actions">
+        <button class="letter-skip" id="skipBtn">show full letter</button>
+        <button class="letter-print" id="printBtn">keep this</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- POEM -->
+  <section id="poem" data-bg="#EFE6D8" data-text="#2B2620" data-title="for you">
+    <div class="fade-in poem">
+      <div class="stanza">Not every story stays the same,<br>Some pages fade, some hearts grow wise.<br>Yet time can gently mend the thread,<br>And bring old smiles beneath new skies.</div>
+      <div class="stanza">A year may change the way we think,<br>The way we speak, the way we see.<br>But lessons learned with honest hearts<br>Become the roots of who we'll be.</div>
+      <div class="stanza">I wish you mornings full of hope,<br>And evenings filled with quiet peace.<br>May every burden slowly fade,<br>And every hidden worry cease.</div>
+      <div class="stanza">Keep chasing dreams with steady steps,<br>Even when the road feels long.<br>Your quiet strength has always been<br>Far greater than you think is strong.</div>
+      <div class="stanza">May laughter find you every day,<br>And kind souls walk beside your way.<br>May courage never leave your heart,<br>No matter what life has to say.</div>
+      <div class="stanza">So here's to one more beautiful year,<br>To brighter skies and dreams come true.<br>Happy Birthday, take good care—<br>The world is better because of you.</div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section id="closing" data-bg="#FBF3E4" data-text="#2B2620" style="overflow:hidden;" data-title="happy birthday, yashu">
+    <div class="fade-in" style="text-align:center; position:relative; z-index:2;">
+      <div class="eyebrow" style="color:#B99659;">thank you for trusting me again</div>
+      <h2>Happy Birthday, Yashu.</h2>
+      <p>Here's to more random conversations, more chapters, and more years of this.</p>
+      <div class="signature">— junnn <span class="ps-star" id="psStar">✦</span></div>
+      
+      <div class="candle-container" id="candleBtn" title="light it up">
+        <svg class="candle-svg" viewBox="0 0 24 32">
+          <path class="candle-body" d="M8,12 v20 h8 v-20 z" />
+          <path class="candle-wick" d="M12,12 v-2" />
+          <path class="candle-flame" id="candleFlame" d="M12,10 c-2,-3 3,-5 0,-8 c-3,3 2,5 0,8 z" />
+        </svg>
+      </div>
+
+      <div class="time-capsule" id="timeCapsule">
+        <span id="capsuleLock">for next year</span>
+        <div id="capsuleMessage" class="capsule-message">
+          // The message unlocks on Oct 8th, 2027
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>made quietly, just for you</footer>
+
+  <!-- MENDING THREAD -->
+  <div class="mending-thread-track">
+    <div class="mending-thread-fill" id="mendingThread"></div>
+  </div>
+
+  <!-- AMBIENT CHIME TOGGLE -->
+  <button class="ambient-toggle" id="ambientToggle" aria-label="Toggle ambient sound">♪</button>
+
+  <!-- PS MODAL -->
+  <div class="ps-modal" id="psModal">
+    <div class="ps-card" id="psCard">
+      <p>P.S.</p><br>
+      <p>If I'm being honest — the day you texted first is one I still think about. I don't think I ever properly said thank you for that.</p><br>
+      <p>So, thank you. For choosing to let me back in.</p>
+      <button class="ps-close" id="psClose">close</button>
+    </div>
+  </div>
+
+<script>
+
+  // === REVISIT GREETING ===
+  (function(){
+    const ledeEl = document.querySelector('#hero .lede');
+    if(!ledeEl) return;
+    const visited = localStorage.getItem('yashuVisited');
+    if(visited){
+      ledeEl.textContent = "you came back — I like that";
+    } else {
+      setTimeout(()=>{
+        localStorage.setItem('yashuVisited', 'true');
+      }, 3000);
+    }
+  })();
+
+  // Star field for hero
+  const starField = document.getElementById('starField');
+  for(let i=0;i<50;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*100 + '%';
+    s.style.animationDelay = (Math.random()*4) + 's';
+    starField.appendChild(s);
+  }
+
+  // Fireflies for closing section
+  const closing = document.getElementById('closing');
+  for(let i=0;i<14;i++){
+    const f = document.createElement('div');
+    f.className = 'firefly';
+    f.style.left = (10 + Math.random()*80) + '%';
+    f.style.top = (30 + Math.random()*50) + '%';
+    f.style.animationDelay = (Math.random()*8) + 's';
+    f.style.animationDuration = (6 + Math.random()*4) + 's';
+    closing.appendChild(f);
+  }
+
+  // Scroll-driven sky/background transition + fade-ins
+  const sections = document.querySelectorAll('section[data-bg]');
+  const root = document.documentElement;
+
+  const bgObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const bg = entry.target.getAttribute('data-bg');
+        const text = entry.target.getAttribute('data-text');
+        document.body.style.setProperty('--bg', bg);
+        document.body.style.setProperty('--text', text);
+        document.body.style.backgroundColor = bg;
+        document.body.style.color = text;
+        const title = entry.target.getAttribute('data-title');
+        if(title) {
+          document.title = title;
+        }
+      }
+    });
+  }, { threshold: 0.55 });
+
+  sections.forEach(s=>bgObserver.observe(s));
+
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const fadeObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+  fadeEls.forEach(el=>fadeObserver.observe(el));
+
+  // Typewriter letter reveal
+  const letterFull = `Dear Yashu,
+Happy Birthday! 🎉
+
+I honestly don't know where to begin because this isn't just another birthday wish. It's a thank-you.
+
+If someone had told me a year ago that we'd one day sit and laugh again, share random stories, talk about life, and have conversations that feel so natural, I probably wouldn't have believed them.
+
+Looking back, I know I made mistakes. I crossed a boundary that mattered to you, and for a long time I carried that regret with me. But instead of remembering only that chapter, today I want to remember something much bigger—the friendship that existed before it, and the one we're slowly rebuilding now.
+
+Thank you for giving me another chance to be part of your life, even if it's simply as a friend. That takes courage, trust, and kindness, and I don't take that for granted.
+
+One thing I've always admired about you is your strength. You rarely show everything that's on your mind, yet somehow you keep moving forward. Even when life isn't easy, you still carry yourself with determination. I genuinely respect that about you.
+
+I hope this year gives you the peace you've been searching for, the confidence you've been rebuilding, and the happiness you deserve. I hope one day you look back and smile at everything that once felt impossible.
+
+Please don't lose the curiosity, honesty, and quiet strength that make you who you are. The world may not always notice those qualities immediately, but they're there, and they're valuable.
+
+Thank you for every conversation, every laugh, every random discussion, and for trusting me enough to let me know a little more about your world.
+
+I don't know what the future holds for either of us, but I do know this:
+Some friendships become meaningful not because they're perfect, but because both people grow.
+
+I'm glad ours got another chapter.
+
+Happy Birthday once again, Yashu. I hope this year brings you more smiles than worries, more peace than overthinking, and many beautiful memories.
+
+Take care of yourself.`;
+
+  const letterTextEl = document.getElementById('letterText');
+  const cursorEl = document.getElementById('letterCursor');
+  const skipBtn = document.getElementById('skipBtn');
+  let typed = false;
+  let typing = false;
+  let charIndex = 0;
+  let typeTimer = null;
+
+  function typeStep(){
+    if(charIndex < letterFull.length){
+      letterTextEl.textContent += letterFull.charAt(charIndex);
+      charIndex++;
+      const c = letterFull.charAt(charIndex-1);
+      const delay = (c === '.' || c === '\n') ? 90 : 18;
+      typeTimer = setTimeout(typeStep, delay + Math.random()*12);
+    } else {
+      typing = false;
+      typed = true;
+      cursorEl.style.display = 'none';
+      skipBtn.classList.add('hidden');
+    }
+  }
+
+  function startTyping(){
+    if(typed || typing) return;
+    typing = true;
+    typeStep();
+  }
+
+  function skipTyping(){
+    clearTimeout(typeTimer);
+    letterTextEl.textContent = letterFull;
+    typed = true;
+    typing = false;
+    cursorEl.style.display = 'none';
+    skipBtn.classList.add('hidden');
+  }
+
+  skipBtn.addEventListener('click', skipTyping);
+
+  const letterObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        startTyping();
+      }
+    });
+  }, { threshold: 0.4 });
+  letterObserver.observe(document.getElementById('letter'));
+
+  // P.S. Modal Interaction
+  const psStar = document.getElementById('psStar');
+  const psModal = document.getElementById('psModal');
+  const psClose = document.getElementById('psClose');
+  const psCard = document.getElementById('psCard');
+
+  if(psStar && psModal && psClose && psCard) {
+    psStar.addEventListener('click', () => {
+      psModal.classList.add('visible');
+    });
+    psClose.addEventListener('click', () => {
+      psModal.classList.remove('visible');
+    });
+    psModal.addEventListener('click', (e) => {
+      if(!psCard.contains(e.target)){
+        psModal.classList.remove('visible');
+      }
+    });
+  }
+
+  // === MENDING THREAD SCROLL BAR ===
+  const mendingThread = document.getElementById('mendingThread');
+  if(mendingThread) {
+    const updateScroll = () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      let progress = 0;
+      if(docHeight > 0) {
+        progress = (scrollY / docHeight) * 100;
+      }
+      mendingThread.style.setProperty('--scroll-progress', `${progress}%`);
+    };
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateScroll);
+    }, {passive: true});
+    updateScroll();
+  }
+
+  // === AMBIENT CHIME ===
+  const ambientToggle = document.getElementById('ambientToggle');
+  let audioCtx;
+  let masterGain;
+  let osc1, osc2, lfo, synthGain, lfoGain;
+  let isPlaying = false;
+
+  if(ambientToggle) {
+    ambientToggle.addEventListener('click', () => {
+      if(!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if(audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const now = audioCtx.currentTime;
+
+      if(!isPlaying) {
+        isPlaying = true;
+        ambientToggle.classList.add('active');
+
+        osc1 = audioCtx.createOscillator();
+        osc2 = audioCtx.createOscillator();
+        lfo = audioCtx.createOscillator();
+        
+        synthGain = audioCtx.createGain();
+        lfoGain = audioCtx.createGain();
+        masterGain = audioCtx.createGain();
+
+        osc1.type = 'sine';
+        osc2.type = 'sine';
+        lfo.type = 'sine';
+
+        osc1.frequency.value = 220;
+        osc2.frequency.value = 221.5;
+        lfo.frequency.value = 0.1;
+
+        synthGain.gain.value = 0.5;
+        lfoGain.gain.value = 0.2;
+
+        lfo.connect(lfoGain);
+        lfoGain.connect(synthGain.gain);
+
+        osc1.connect(synthGain);
+        osc2.connect(synthGain);
+        synthGain.connect(masterGain);
+        masterGain.connect(audioCtx.destination);
+
+        masterGain.gain.setValueAtTime(0, now);
+        masterGain.gain.linearRampToValueAtTime(0.03, now + 2);
+
+        osc1.start(now);
+        osc2.start(now);
+        lfo.start(now);
+
+      } else {
+        isPlaying = false;
+        ambientToggle.classList.remove('active');
+
+        masterGain.gain.cancelScheduledValues(now);
+        masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+        masterGain.gain.linearRampToValueAtTime(0, now + 1);
+
+        const stopTime = now + 1.1;
+        osc1.stop(stopTime);
+        osc2.stop(stopTime);
+        lfo.stop(stopTime);
+      }
+    });
+  }
+
+  // === NAME ECHO ===
+  const heroName = document.getElementById('heroName');
+  if(heroName) {
+    const names = ["Anjali", "Priya", "Neha", "Riya", "Kavya", "Sneha", "Aditi", "Shruti", "Meghna", "Pooja", "Aarohi"];
+    const duration = 1200; 
+    const intervalTime = 60;
+    const maxFlickers = duration / intervalTime;
+    let flickerCount = 0;
+
+    const flicker = setInterval(() => {
+      heroName.innerText = names[Math.floor(Math.random() * names.length)];
+      flickerCount++;
+      if(flickerCount >= maxFlickers) {
+        clearInterval(flicker);
+        heroName.innerText = "Yashaswini";
+      }
+    }, intervalTime);
+  }
+
+  // === FULL CIRCLE WHISPER ===
+  let hasReachedBottom = false;
+  const whisperEl = document.getElementById('fullCircleWhisper');
+  window.addEventListener('scroll', () => {
+    if(!whisperEl) return;
+    const scrollY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
+    // Check if bottom reached (allow some leeway)
+    if(docHeight > 0 && (scrollY / docHeight) > 0.98) {
+      hasReachedBottom = true;
+    }
+
+    // If bottom reached and scrolled back to top
+    if(hasReachedBottom && scrollY < 50) {
+      whisperEl.classList.add('visible');
+    }
+  }, {passive: true});
+
+  // === INTERACTIVE CANDLE ===
+  const candleBtn = document.getElementById('candleBtn');
+  if(candleBtn) {
+    candleBtn.addEventListener('click', () => {
+      candleBtn.classList.add('lit');
+    });
+  }
+
+  // === PRINT KEEPSAKE ===
+  document.getElementById('printBtn').addEventListener('click', () => {
+    window.print();
+  });
+
+  // === BIRTHDAY LINE ===
+  const now = new Date();
+  if(now.getMonth() === 9 && now.getDate() === 8) { // Oct is month 9
+    const bdayLine = document.getElementById('birthdayLine');
+    if(bdayLine) bdayLine.classList.add('active');
+  }
+
+  // === TIME CAPSULE ===
+  const timeCapsule = document.getElementById('timeCapsule');
+  const capsuleLock = document.getElementById('capsuleLock');
+  const capsuleMessage = document.getElementById('capsuleMessage');
+  if(timeCapsule) {
+    timeCapsule.addEventListener('click', () => {
+      const unlockDate = new Date(2027, 9, 8); // Oct 8th, 2027
+      if(new Date() >= unlockDate) {
+        capsuleLock.style.display = 'none';
+        capsuleMessage.style.display = 'block';
+        capsuleMessage.innerHTML = "Happy Birthday. You made it another year. I'm so glad you're still here.";
+      } else {
+        capsuleLock.innerText = "not yet. come back in 2027.";
+        timeCapsule.classList.add('shaking');
+        setTimeout(() => timeCapsule.classList.remove('shaking'), 400);
+      }
+    });
+  }
+
+  // === ENTRANCE ENVELOPE ===
+  document.body.classList.add('locked');
+  const envWrapper = document.getElementById('entranceEnvelope');
+  const envOverlay = document.getElementById('entranceOverlay');
+  
+  if (envWrapper) {
+    envWrapper.addEventListener('click', () => {
+      envWrapper.classList.add('open');
+      
+      // Start the music!
+      const ambientBtn = document.getElementById('ambientToggle');
+      if (ambientBtn && !ambientBtn.classList.contains('active')) {
+        ambientBtn.click();
+      }
+      
+      // Hide overlay and unlock body
+      setTimeout(() => {
+        envOverlay.classList.add('hidden');
+        document.body.classList.remove('locked');
+        window.scrollTo(0,0);
+        setTimeout(() => envOverlay.remove(), 2500);
+      }, 1200); 
+    });
+  }
+
+</script>
+</body>
+</html>
